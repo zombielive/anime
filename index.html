@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>anime Testing</title>
+</head>
+
+<body>
+	<select v-model="year">
+		<option value="">所有年份</option>
+		<template v-for="yop in yearOption">
+			<option v-bind:value="yop" v-if="yop == thisYear" selected="selected">{{yop}}</option>
+			<option v-bind:value="yop" v-else>{{yop}}</option>
+		</template>	
+	</select>
+	<select v-model="season">
+		<option value="">所有季节</option>
+		<template v-for="sop in seasonOption">
+			<option v-bind:value="sop.value" v-if="sop.value == thisSeason" selected="selected">{{sop.text}}</option>
+			<option v-bind:value="sop.value" v-else>{{sop.text}}</option>
+		</template>	
+	</select>
+	<input type="text" v-model="name" placeholder="type the name">
+	<template v-for="item in anime | filterBy year in 'year' | filterBy season in 'season' | filterBy name in 'name' |orderBy 'year' ">
+		<div>{{ item.name }}{{ item.site }}</div>
+	</template>
+	<script type="text/javascript" src="./js/data.js"></script>
+	<script type="text/javascript" src="./js/vue.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
