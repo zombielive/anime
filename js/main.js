@@ -11,7 +11,7 @@ var vm = new Vue({
 			{text:"夏",value:"夏"},
 			{text:"秋",value:"秋"},
 			{text:"冬",value:"冬"}
-		]
+		],
 	}
 });
 function getYearOption() {

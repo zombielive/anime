@@ -1,5 +1,5 @@
 var anime = [
-{id:"0",name:"只有我不在的街道",sites:["哔哩哔哩","嘀哩嘀哩"],url:["bilibili.com","dilidili.com"],year:2016,season:"冬",img:"zywbzdjd.jpg"},
+{id:"0",name:"只有我不在的街道",sites:["哔哩哔哩","嘀哩嘀哩"],url:["bilibili.com","dilidili.com"],class:["bilibili","dilidili"],year:2016,season:"冬",img:"zywbzdjd.jpg"},
 {id:"1",name:"16春番1",sites:"bilibili",url:"",year:2016,season:"春"},
 {id:"2",name:"16夏番1",sites:"bilibili",url:"",year:2016,season:"夏"},
 {id:"3",name:"16秋番1",sites:"bilibili",url:"",year:2016,season:"秋"},

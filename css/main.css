@@ -1,2 +1,13 @@
 body{padding-top: 70px}
 .display{margin-top: 20px}
+.thumbnail{overflow: hidden;}
+.thumbnail img{width: 120px;float: left;}
+.caption{margin-left: 120px;}
+.clear:after{ content:"."; display:block; height:0; visibility:hidden; clear:both;}
+/* buttons */
+.btn{color: #fff!important;}
+.btn:hover{color: #fff;}
+.bilibili{background-color: #f25d8e;border: solid 1px #ffafc9;}
+.bilibili:hover{background-color: #ffafc9;}
+.dilidili{background-color: #262626;border: solid 1px #666;}
+.dilidili:hover{background-color: #666;}

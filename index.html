@@ -2,9 +2,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<title>anime Testing</title>
+	<title>僵尸君の番劇屋</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/spring.css" v-if="!name&&season=='春'">
+	<link rel="stylesheet" href="./css/summer.css" v-if="!name&&season=='夏'">
+	<link rel="stylesheet" href="./css/fall.css" v-if="!name&&season=='秋'">
+	<link rel="stylesheet" href="./css/winter.css" v-if="!name&&season=='冬'">
 </head>
 
 <body>
@@ -17,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Brand</a>
+				<a class="navbar-brand" href="#">僵尸君の番劇屋</a>
 			</div>
 			<div class="navbar-collapse collapse" id="search" aria-expanded="false">
 				<form class="navbar-form navbar-left" role="search">
@@ -51,16 +55,35 @@
 			</div>						
 		</form>
 		<div class="display">
-			<template v-for="item in anime | filterBy year in 'year' | filterBy season in 'season' | filterBy name in 'name' |orderBy 'year' ">
-				<div>
+			<template v-for="item in anime | filterBy year in 'year' | filterBy season in 'season'|orderBy 'name' ">
+				<div class="thumbnail clear">
 					<img src="./img/{{item.img}}" alt="{{item.name}}">
-					{{item.name}}
-					<template v-for="site in anime[$index].sites">
-						<span>{{site}}{{item.url[$index]}}</span>
-					</template>
+					<div class="caption"><h3>{{item.name}}</h3>
+						<p>{{item.year}}{{item.season}}番</p>
+						<template v-for="site in anime[$index].sites">
+							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}">{{item.sites[$index]}}</a>
+							{{{&nbsp;}}}
+						</template>
+					</div>
 				</div>
 			</template>
 		</div>
+	</div>
+	<div class="container" v-if="name">
+		<div class="display">
+			<template v-for="item in anime | filterBy name in 'name' |orderBy 'name' ">
+				<div class="thumbnail clear">
+					<img src="./img/{{item.img}}" alt="{{item.name}}">
+					<div class="caption"><h3>{{item.name}}</h3>
+						<p>{{item.year}}{{item.season}}番</p>
+						<template v-for="site in anime[$index].sites">
+							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}">{{item.sites[$index]}}</a>
+							{{{&nbsp;}}}
+						</template>
+					</div>
+				</div>
+			</template>
+		</div>	
 	</div>
 	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
