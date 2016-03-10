@@ -55,13 +55,13 @@
 			</div>						
 		</form>
 		<div class="display">
-			<template v-for="item in anime | filterBy year in 'year' | filterBy season in 'season'|orderBy 'name' ">
+			<template v-for="item in anime | filterBy year in 'year' | filterBy season in 'season'">
 				<div class="thumbnail clear">
-					<img src="./img/{{item.img}}" alt="{{item.name}}">
+					<img src="{{item.img}}" alt="{{item.name}}">
 					<div class="caption"><h3>{{item.name}}</h3>
 						<p>{{item.year}}{{item.season}}番</p>
 						<template v-for="site in anime[$index].sites">
-							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}">{{item.sites[$index]}}</a>
+							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}" target="_blank">{{site}}</a>
 							{{{&nbsp;}}}
 						</template>
 					</div>
@@ -71,13 +71,13 @@
 	</div>
 	<div class="container" v-if="name">
 		<div class="display">
-			<template v-for="item in anime | filterBy name in 'name' |orderBy 'name' ">
+			<template v-for="item in anime | filterBy name in 'name'">
 				<div class="thumbnail clear">
-					<img src="./img/{{item.img}}" alt="{{item.name}}">
+					<img src="{{item.img}}" alt="{{item.name}}">
 					<div class="caption"><h3>{{item.name}}</h3>
 						<p>{{item.year}}{{item.season}}番</p>
 						<template v-for="site in anime[$index].sites">
-							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}">{{item.sites[$index]}}</a>
+							<a href="{{item.url[$index]}}" class="btn {{item.class[$index]}}" target="_blank">{{site}}</a>
 							{{{&nbsp;}}}
 						</template>
 					</div>
@@ -85,6 +85,12 @@
 			</template>
 		</div>	
 	</div>
+	<footer>
+		<div class="container">
+			<p>built by <a href="http://cn.vuejs.org/" target="_blank">vue.js</a>  and <a href="http://v3.bootcss.com/" target="_blank">bootstrap</a></p>
+			<p><a href="https://github.com/zombielive/anime" target="_blank">github</a> | <a href="https://github.com/zombielive/anime/issues" target="_blank">建议与意见</a></p>
+		</div>
+	</footer>
 	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/data.js"></script>

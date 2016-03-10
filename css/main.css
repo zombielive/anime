@@ -1,9 +1,15 @@
 body{padding-top: 70px}
 .display{margin-top: 20px}
-.thumbnail{overflow: hidden;}
 .thumbnail img{width: 120px;float: left;}
 .caption{margin-left: 120px;}
 .clear:after{ content:"."; display:block; height:0; visibility:hidden; clear:both;}
+footer{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: 100px;
+	color: #fff;
+	text-align: center;
+}
 /* buttons */
 .btn{color: #fff!important;}
 .btn:hover{color: #fff;}
@@ -11,3 +17,15 @@ body{padding-top: 70px}
 .bilibili:hover{background-color: #ffafc9;}
 .dilidili{background-color: #262626;border: solid 1px #666;}
 .dilidili:hover{background-color: #666;}
+.youku{background-color: #06a7e1;}
+.youku:hover{background-color: #ef3f22;}
+.pptv{background-color: #39f;}
+.pptv:hover{background-color: #51a8ff;}
+.le{background-color: #FF3333;}
+.le:hover{background-color: #FF6666;}
+.iqiyi{background-color: #77b400;border: 1px solid #6fa800;}
+.iqiyi:hover{background-color: #6aa100}
+.tudou{background-color: #F60;}
+.tudou:hover{background-color: #F14700;}
+.souhu{background-color: #e73c31;}
+.souhu:hover{background-color: #000;}

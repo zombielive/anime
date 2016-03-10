@@ -7,10 +7,10 @@ var vm = new Vue({
 		thisYear: date.getFullYear(),
 		thisSeason: getSeason(),
 		seasonOption:[
+			{text:"冬",value:"冬"},
 			{text:"春",value:"春"},
 			{text:"夏",value:"夏"},
-			{text:"秋",value:"秋"},
-			{text:"冬",value:"冬"}
+			{text:"秋",value:"秋"}
 		],
 	}
 });
