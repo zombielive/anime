@@ -1,11 +1,10 @@
-var date = new Date();
 var vm = new Vue({
 	el: 'html',
 	data:{
 		anime: anime,
 		yearOption: getYearOption(),
-		thisYear: date.getFullYear(),
-		thisSeason: getSeason(),
+		thisYear: getTime().year,
+		thisSeason: getTime().season,
 		seasonOption:[
 			{text:"冬",value:"冬"},
 			{text:"春",value:"春"},
@@ -21,7 +20,9 @@ function getYearOption() {
 	}
 	return yearOption;
 }
-function getSeason() {
+function getTime() {
+	var date = new Date();
+	var time = new Object();
 	var month = date.getMonth()+1;
 	var season;
 	switch(month){
@@ -38,5 +39,7 @@ function getSeason() {
 		case 11: season = "秋";break;
 		case 12: season = "秋";break;
 	}
-	return season;
+	time.year = date.getFullYear();
+	time.season = season;
+	return time;
 }
