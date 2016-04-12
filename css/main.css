@@ -1,4 +1,5 @@
 body{padding-top: 70px}
+.navbar-form[role="search"]{border: 0;}
 .display{margin-top: 20px}
 .thumbnail img{width: 120px;float: left;}
 .caption{margin-left: 120px;}
@@ -9,6 +10,7 @@ footer{
 	margin-top: 100px;
 	color: #fff;
 	text-align: center;
+	background-color: #666;
 }
 /* buttons */
 .btn{color: #fff!important;}
@@ -29,3 +31,5 @@ footer{
 .tudou:hover{background-color: #F14700;}
 .souhu{background-color: #e73c31;}
 .souhu:hover{background-color: #000;}
+.zq{background-color: #666;}
+.zq:hover{background-color: #999}
